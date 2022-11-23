@@ -1,8 +1,12 @@
-import Card from '../UI/Card';
-import classes from './ProductItem.module.css';
+import Card from '../UI/Card'
+import classes from './ProductItem.module.css'
+import { useSelector, useDispatch } from 'react-redux'
+import { addCart } from '../../feautures/cartItmesSlice'
 
 const ProductItem = (props) => {
-  const { title, price, description } = props;
+  const { title, price, description } = props
+  const cart = useSelector((state) => state.cart)
+  const dispatch = useDispatch()
 
   return (
     <li className={classes.item}>
@@ -17,7 +21,7 @@ const ProductItem = (props) => {
         </div>
       </Card>
     </li>
-  );
-};
+  )
+}
 
-export default ProductItem;
+export default ProductItem
