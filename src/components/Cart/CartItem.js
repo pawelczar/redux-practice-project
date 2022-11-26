@@ -22,8 +22,12 @@ const CartItem = (props) => {
           x <span>{quantity}</span>
         </div>
         <div className={classes.actions}>
-          <button>-</button>
-          <button>+</button>
+          <button onClick={() => dispatch(removeCart())}>-</button>
+          <button
+            onClick={() => dispatch(addCart({ product: 'Test', price: 6 }))}
+          >
+            +
+          </button>
         </div>
       </div>
     </li>
